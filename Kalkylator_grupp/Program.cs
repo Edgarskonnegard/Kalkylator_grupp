@@ -11,7 +11,6 @@
                 int input;
                 int firstInt;
                 int secondInt;
-                Console.WriteLine("Fractions");
                 Console.WriteLine("Enter a option by the number: ");
                 Console.WriteLine("Option 1: Addition");
                 Console.WriteLine("Option 2: Subtraction");
@@ -19,38 +18,28 @@
                 Console.WriteLine("Option 4: Division");
                 Console.WriteLine("Option 5: Power");
                 Console.WriteLine("Option 6: Exit");
-                while (!int.TryParse(Console.ReadLine(), out input) || input < 1 || input > 6)
-                {
-                    Console.WriteLine("Invalid input");
-                }
-                Console.WriteLine("Enter first number: ");
-                while (!int.TryParse(Console.ReadLine(), out firstInt))
-                {
-                    Console.WriteLine("Invalid input");
-                }
+                //while (!int.TryParse(Console.ReadLine(), out input) || input < 1 || input > 6)
+                //{
+                //    Console.WriteLine("Invalid input");
+                //}
+               
 
-                Console.WriteLine("Enter second number: ");
-                while (!int.TryParse(Console.ReadLine(), out secondInt))
-                {
-                    Console.WriteLine("Invalid input");
-                }
-
-                switch (input)
+                switch (Convert.ToInt32(Console.ReadLine()))
                 {
                     case 1:
-                        Console.WriteLine(Addition(firstInt, secondInt));
+                        Console.WriteLine(Addition(GetFirstNum(), GetSecNum()));
                         break;
                     case 2:
-                        Console.WriteLine(Subtraction(firstInt, secondInt));
+                        Console.WriteLine(Subtraction(GetFirstNum(), GetSecNum()));
                         break;
                     case 3:
-                        Console.WriteLine(Multiplikation(firstInt, secondInt));
+                        Console.WriteLine(Multiplikation(GetFirstNum(), GetSecNum()));
                         break;
                     case 4:
-                        Console.WriteLine(Division(firstInt, secondInt));
+                        Console.WriteLine(Division(GetFirstNum(), GetSecNum()));
                         break;
                     case 5:
-                        Console.WriteLine(Power(firstInt, secondInt));
+                        Console.WriteLine(Power(GetFirstNum(), GetSecNum()));
                         break;
                     case 6:
                         keepPlaying = false;
@@ -63,6 +52,27 @@
 
         }
 
+        private static int GetFirstNum()
+        {
+            Console.WriteLine("Enter first number: ");
+            return Convert.ToInt32(Console.ReadLine());
+            /*while (!int.TryParse(Console.ReadLine(), out firstInt))
+            {
+                Console.WriteLine("Invalid input");
+            }
+            */
+            
+        }
+        private static int GetSecNum()
+        {
+            Console.WriteLine("Enter second number: ");
+            return Convert.ToInt32(Console.ReadLine());
+            /*while (!int.TryParse(Console.ReadLine(), out secondInt))
+            {
+                Console.WriteLine("Invalid input");
+            }
+            */
+        }
 
         public static int Addition(int value1, int value2)
         {
