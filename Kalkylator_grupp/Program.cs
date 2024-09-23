@@ -8,9 +8,6 @@
             bool keepPlaying = true;
             do
             {
-                int input;
-                int firstInt;
-                int secondInt;
                 Console.WriteLine("Enter a option by the number: ");
                 Console.WriteLine("Option 1: Addition");
                 Console.WriteLine("Option 2: Subtraction");
