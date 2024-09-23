@@ -7,6 +7,7 @@
             Console.WriteLine("Fractions");
         }
 
+
         static double Divide(double a, double b)
         {
             try
