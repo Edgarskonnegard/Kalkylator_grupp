@@ -4,12 +4,20 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Fractions");
-
-            string? input = Console.ReadLine();
-
+            int input;
             int firstInt;
             int secondInt;
+            Console.WriteLine("Fractions");
+            Console.WriteLine("Enter a option by the number: ");
+            Console.WriteLine("Option 1: Addition");
+            Console.WriteLine("Option 2: Subtraction");
+            Console.WriteLine("Option 3: Multiplication");
+            Console.WriteLine("Option 4: Division");
+            Console.WriteLine("Option 5: Power");
+            while (!int.TryParse(Console.ReadLine(), out input) || input < 1 || input > 5)
+            {
+                Console.WriteLine("Invalid input");
+            }
             Console.WriteLine("Enter first number: ");
             while (!int.TryParse(Console.ReadLine(), out firstInt))
             {
@@ -24,15 +32,20 @@
 
             switch (input)
             {
-                case "Add":
-                    Addition(firstInt, secondInt);
+                case 1:
+                    Console.WriteLine(Addition(firstInt, secondInt));
                     break;
-                case "Sub":
-                    Subtraction(firstInt, secondInt);
+                case 2:
+                    Console.WriteLine(Subtraction(firstInt, secondInt));
                     break;
-                case "Multipli":
-                    Multiplikation(firstInt, secondInt);
-                    Console.WriteLine("Division");
+                case 3:
+                    Console.WriteLine(Multiplikation(firstInt, secondInt));
+                    break;
+                case 4:
+                    Console.WriteLine(Division(firstInt, secondInt));
+                    break;
+                case 5:
+                    Console.WriteLine(Power(firstInt, secondInt));
                     break;
                 default:
                     Console.WriteLine("Invalid input");
@@ -47,7 +60,7 @@
             return value1 + value2;
         }
 
-        private static int Subtraction(int firstInt, int secondInt) 
+        private static int Subtraction(int firstInt, int secondInt)
         {
 
             int sum = firstInt - secondInt;
