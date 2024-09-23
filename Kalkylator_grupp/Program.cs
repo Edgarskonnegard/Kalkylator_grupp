@@ -5,6 +5,40 @@
         static void Main(string[] args)
         {
             Console.WriteLine("Fractions");
+
+            string? input = Console.ReadLine();
+
+            int firstInt;
+            int secondInt;
+            Console.WriteLine("Enter first number: ");
+            while (!int.TryParse(Console.ReadLine(), out firstInt))
+            {
+                Console.WriteLine("Invalid input");
+            }
+
+            Console.WriteLine("Enter second number: ");
+            while (!int.TryParse(Console.ReadLine(), out secondInt))
+            {
+                Console.WriteLine("Invalid input");
+            }
+
+            switch (input)
+            {
+                case "Add":
+                    Addition(firstInt, secondInt);
+                    break;
+                case "Sub":
+                    Subtraction(firstInt, secondInt);
+                    break;
+                case "Multipli":
+                    Multiplikation(firstInt, secondInt);
+                    Console.WriteLine("Division");
+                    break;
+                default:
+                    Console.WriteLine("Invalid input");
+                    break;
+            }
+
         }
 
 
