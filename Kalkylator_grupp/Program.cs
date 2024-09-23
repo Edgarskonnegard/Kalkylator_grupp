@@ -39,6 +39,13 @@
             }
         }
 
+        private static double Power(double a, double exponent)
+        {
+            return Math.Pow(a, exponent);
+        }
+
+
+
 
     }
 }
