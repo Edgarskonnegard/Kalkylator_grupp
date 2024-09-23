@@ -18,7 +18,8 @@
                 Console.WriteLine("Option 3: Multiplication");
                 Console.WriteLine("Option 4: Division");
                 Console.WriteLine("Option 5: Power");
-                while (!int.TryParse(Console.ReadLine(), out input) || input < 1 || input > 5)
+                Console.WriteLine("Option 6: Exit");
+                while (!int.TryParse(Console.ReadLine(), out input) || input < 1 || input > 6)
                 {
                     Console.WriteLine("Invalid input");
                 }
